@@ -13,6 +13,21 @@
 
 #define _PROMPT "$ "
 
+typedef struct {
+	char *name;
+	void (*function)(char **args);
+} BuiltInCommand;
+
+/* Built in Functions */
+int check_for_builtins(char **args);
+int set_environment_variable(char **args);
+int unset_environment_variable(char **args);
+void display_help(void);
+void exit_shell(char **args);
+int display_environment(void);
+int clear_screen(char **args);
+void change_directory(char **args);
+
 /* functions */
 void *get_line(void);
 char *get_input(void);

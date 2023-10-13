@@ -15,7 +15,7 @@ int execute_command(char **argv)
 
 	if (argv == NULL || *argv == NULL)
 		return (status);
-	if (check_for_builtin(argv))
+	if (check_for_builtins(argv))
 		return (status);
 
 	id = fork();

@@ -2,16 +2,6 @@
 static char *recent_input;
 
 /**
- * print_prompt - prints the shell prompt to stdin
-*/
-
-void print_prompt(void)
-{
-	_puts("$ ");
-	fflush(stdout);
-}
-
-/**
  * get_input - reads user's input
  * Return: pointer to the buffer that contains the input
 */
@@ -30,7 +20,7 @@ char *get_input(void)
 		if (count == -1)
 		{
 			free(input_buf);
-			_puts("\n");
+			_print("\n");
 			return (NULL);
 		}
 		input_buf[count - 1] = '\0';

@@ -11,9 +11,7 @@ int main(void)
 	char **tokenized_input;
 	int status;
 
-	signal(SIGINT, _sigint);
-	signal(SIGQUIT, _sigquit);
-	signal(SIGTSTP, _sigstp);
+	register_signal_handlers();
 
 	do {
 		input = get_input();

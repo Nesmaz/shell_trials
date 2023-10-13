@@ -11,8 +11,9 @@
 #include <sys/wait.h>
 #include <sys/stat.h>
 
+#define _PROMPT "$ "
+
 /* functions */
-void print_prompt(void);
 void *get_line(void);
 char *get_input(void);
 int execute(char **argv);
@@ -34,8 +35,9 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
 
 /* Printing functions*/
 int _putchar(char ch);
-void _puts(char *str);
-void _puterror(char *err_msg);
+void _print(char *str);
+void print_error(char *err_msg);
+void print_prompt(char *str);
 
 /* tokenizers*/
 char **tokenize(char *str, const char *delim);
@@ -45,8 +47,11 @@ char **tokenize_input(char *str);
 void free_tokens(char **ptr);
 
 /* Signal handlers*/
+void register_signal_handlers();
 void _sigint(int signal);
 void _sigquit(int signal);
 void _sigstp(int signal);
 
+/* Execution */
+int execute_command(char **argv);
 #endif

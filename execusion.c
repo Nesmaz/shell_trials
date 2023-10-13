@@ -9,7 +9,7 @@
 
 int execute_command(char **argv)
 {
-	pid_t child_pid;
+	pid_t id;
 	int exit_status = 0;
 	char *command_path, *_env[2];
 
